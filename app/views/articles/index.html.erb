@@ -13,8 +13,14 @@
       <tr>
         <td><%= it.title %></td>
         <td><%= it.description %></td>
-        <td>Placeholder</td>
+        <td><%= link_to 'view', article_path(it) %></td>
+        <td><%= link_to 'edit', edit_article_path(it) %></td>
+        <td><%= link_to 'delete', article_path(it), data: { turbo_method: :delete } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+
+<p>
+  <%= link_to 'create article', new_article_path %>
+</p>
